@@ -1,0 +1,620 @@
+h1 {
+  margin-bottom: 12px;
+}
+
+/*текст в хеадере*/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: normal;
+  color: yellow;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  height: 235px;
+  min-width: 1200px;
+}
+
+.content-wraper {
+  margin: 0;
+  padding: 0;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+}
+
+header ul li {
+  margin: 0;
+  padding: 0;
+  margin: 25px 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+header ul li:nth-child(2) {
+  width: 35%;
+  margin: auto 39px;
+}
+
+footer {
+  min-width: 1200px;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-top: 50px;
+}
+
+footer ul li {
+  width: 378px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+footer ul li:nth-child(2) {
+  margin: auto 22px;
+}
+
+footer .button .btn-price {
+  display: inline-block;
+}
+
+.modal-menu {
+  display: none;
+  position: absolute;
+  top: 30%;
+  left: 35%;
+}
+
+.modal-menu form {
+  margin-top: 30px;
+}
+
+.modal-menu .name,
+.modal-menu .phone {
+  margin-top: 20px;
+}
+
+nav {
+  margin: 0;
+  padding: 0;
+  min-width: 1200px;
+  margin-top: -5px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+nav ul li a {
+  margin: 10px 40px;
+}
+
+body {
+  background: #c9b1d7;
+}
+
+header {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: normal;
+  color: yellow;
+  background: #2f1542;
+}
+
+.just_test {
+  margin: 40px;
+}
+
+.modal-menu {
+  width: 400px;
+  height: 440px;
+  background: #e3d7ea;
+  box-shadow: 0 7px 21px rgba(0, 0, 0, 0.82);
+}
+
+.modal-menu .close {
+  position: absolute;
+  border-radius: 100%;
+  background: #c9b1d7;
+  width: 50px;
+  height: 50px;
+  left: 420px;
+  top: -30px;
+  cursor: pointer;
+}
+
+.modal-menu .close svg {
+  margin-left: 14px;
+  margin-top: 13px;
+  fill: #2f1542;
+}
+
+.modal-menu .title {
+  margin: 0;
+  padding: 0;
+  height: 115px;
+  background: #2f1542;
+}
+
+.modal-menu .title p {
+  margin: 0;
+  padding: 0;
+  padding: 15px 20px;
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 28px;
+  line-height: 28px;
+  font-weight: normal;
+  color: #b63a80;
+}
+
+.modal-menu form {
+  text-align: center;
+}
+
+.modal-menu form p {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 28px;
+  line-height: 30px;
+  font-weight: normal;
+  color: #7b37b1;
+}
+
+.modal-menu form input[type="text"],
+.modal-menu form input[type="tel"] {
+  height: 40px;
+  width: 250px;
+  background: #c0a0d7;
+  outline: none;
+  border: none;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 28px;
+  line-height: 30px;
+  font-weight: normal;
+  color: #7b37b1;
+}
+
+.modal-menu form input[type="text"]:focus,
+.modal-menu form input[type="tel"]:focus {
+  outline: 2px solid blue;
+}
+
+.modal-menu form input[type="text"]:-moz-placeholder,
+.modal-menu form input[type="tel"]:-moz-placeholder {
+  color: #a072c5;
+}
+
+.modal-menu form input[type="submit"] {
+  text-decoration: none;
+  display: block;
+  height: 50px;
+  text-align: center;
+  padding-top: 0;
+  border-radius: 10px;
+  background: #7e6bba;
+  /* Для старых браузров */
+  background: -webkit-linear-gradient(top, #7e6bba, #15054a);
+  background: linear-gradient(to bottom, #7e6bba, #15054a);
+  width: 170px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 20px;
+  line-height: 14px;
+  font-weight: normal;
+  color: #beb6d4;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  margin: 40px auto;
+}
+
+.modal-menu form input[type="submit"]:hover {
+  background: -webkit-linear-gradient(top, #a293d2, #1e0f4f);
+  background: linear-gradient(to bottom, #a293d2, #1e0f4f);
+  color: white;
+}
+
+.modal-menu form input[type="submit"]:focus {
+  background: -webkit-linear-gradient(top, #8e77af, #8e77af);
+  background: linear-gradient(to bottom, #8e77af, #8e77af);
+  color: white;
+}
+
+nav {
+  display: block;
+  background: #2f1542;
+  text-align: center;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  height: 50px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 28px;
+  line-height: 28px;
+  font-weight: normal;
+  color: #745ebb;
+}
+
+nav ul li a:hover {
+  color: #c9b1d7;
+}
+
+nav ul li .active {
+  color: grey;
+}
+
+nav ul li .active:hover {
+  color: grey;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  height: 235px;
+  min-width: 1200px;
+}
+
+.content-wraper {
+  margin: 0;
+  padding: 0;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+}
+
+header ul li {
+  margin: 0;
+  padding: 0;
+  margin: 25px 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+header ul li:nth-child(2) {
+  width: 35%;
+  margin: auto 39px;
+}
+
+footer {
+  min-width: 1200px;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-top: 50px;
+}
+
+footer ul li {
+  width: 378px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+footer ul li:nth-child(2) {
+  margin: auto 22px;
+}
+
+footer .button .btn-price {
+  display: inline-block;
+}
+
+.modal-menu {
+  display: none;
+  position: absolute;
+  top: 30%;
+  left: 35%;
+}
+
+.modal-menu form {
+  margin-top: 30px;
+}
+
+.modal-menu .name,
+.modal-menu .phone {
+  margin-top: 20px;
+}
+
+nav {
+  margin: 0;
+  padding: 0;
+  min-width: 1200px;
+  margin-top: -5px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+nav ul li a {
+  margin: 10px 40px;
+}
+
+.just_test {
+  margin: 40px;
+}
+
+footer {
+  height: 270px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: normal;
+  color: yellow;
+  background: #2f1542;
+}
+
+footer .content-wraper ul {
+  list-style: none;
+}
+
+footer .button a {
+  text-decoration: none;
+  display: block;
+  height: 50px;
+  text-align: center;
+  padding-top: 3px;
+  border-radius: 10px;
+  background: #7e6bba;
+  /* Для старых браузров */
+  background: -webkit-linear-gradient(top, #7e6bba, #15054a);
+  background: linear-gradient(to bottom, #7e6bba, #15054a);
+  width: 120px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: normal;
+  color: #beb6d4;
+}
+
+footer .button a:hover {
+  background: -webkit-linear-gradient(top, #a293d2, #1e0f4f);
+  background: linear-gradient(to bottom, #a293d2, #1e0f4f);
+  color: white;
+}
+
+footer .button a:focus {
+  background: -webkit-linear-gradient(top, #8e77af, #8e77af);
+  background: linear-gradient(to bottom, #8e77af, #8e77af);
+  color: white;
+}
+
+body {
+  background: #c9b1d7;
+}
+
+header {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: normal;
+  color: yellow;
+  background: #2f1542;
+}
+
+.modal-menu {
+  width: 400px;
+  height: 440px;
+  background: #e3d7ea;
+  box-shadow: 0 7px 21px rgba(0, 0, 0, 0.82);
+}
+
+.modal-menu .close {
+  position: absolute;
+  border-radius: 100%;
+  background: #c9b1d7;
+  width: 50px;
+  height: 50px;
+  left: 420px;
+  top: -30px;
+  cursor: pointer;
+}
+
+.modal-menu .close svg {
+  margin-left: 14px;
+  margin-top: 13px;
+  fill: #2f1542;
+}
+
+.modal-menu .title {
+  margin: 0;
+  padding: 0;
+  height: 115px;
+  background: #2f1542;
+}
+
+.modal-menu .title p {
+  margin: 0;
+  padding: 0;
+  padding: 15px 20px;
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 28px;
+  line-height: 28px;
+  font-weight: normal;
+  color: #b63a80;
+}
+
+.modal-menu form {
+  text-align: center;
+}
+
+.modal-menu form p {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 28px;
+  line-height: 30px;
+  font-weight: normal;
+  color: #7b37b1;
+}
+
+.modal-menu form input[type="text"],
+.modal-menu form input[type="tel"] {
+  height: 40px;
+  width: 250px;
+  background: #c0a0d7;
+  outline: none;
+  border: none;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 28px;
+  line-height: 30px;
+  font-weight: normal;
+  color: #7b37b1;
+}
+
+.modal-menu form input[type="text"]:focus,
+.modal-menu form input[type="tel"]:focus {
+  outline: 2px solid blue;
+}
+
+.modal-menu form input[type="text"]:-moz-placeholder,
+.modal-menu form input[type="tel"]:-moz-placeholder {
+  color: #a072c5;
+}
+
+.modal-menu form input[type="submit"] {
+  text-decoration: none;
+  display: block;
+  height: 50px;
+  text-align: center;
+  padding-top: 0;
+  border-radius: 10px;
+  background: #7e6bba;
+  /* Для старых браузров */
+  background: -webkit-linear-gradient(top, #7e6bba, #15054a);
+  background: linear-gradient(to bottom, #7e6bba, #15054a);
+  width: 170px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 20px;
+  line-height: 14px;
+  font-weight: normal;
+  color: #beb6d4;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  margin: 40px auto;
+}
+
+.modal-menu form input[type="submit"]:hover {
+  background: -webkit-linear-gradient(top, #a293d2, #1e0f4f);
+  background: linear-gradient(to bottom, #a293d2, #1e0f4f);
+  color: white;
+}
+
+.modal-menu form input[type="submit"]:focus {
+  background: -webkit-linear-gradient(top, #8e77af, #8e77af);
+  background: linear-gradient(to bottom, #8e77af, #8e77af);
+  color: white;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: normal;
+  color: yellow;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: block;
+  background: #2f1542;
+  text-align: center;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  height: 50px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 28px;
+  line-height: 28px;
+  font-weight: normal;
+  color: #745ebb;
+}
+
+nav ul li a:hover {
+  color: #c9b1d7;
+}
+
+nav ul li .active {
+  color: grey;
+}
+
+nav ul li .active:hover {
+  color: grey;
+}
+
+/*текст в хеадере*/
