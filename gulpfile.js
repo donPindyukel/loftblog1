@@ -82,6 +82,7 @@ gulp.task('html', function () {
 gulp.task('watch', function() {
 	gulp.watch('source/*.css', ['css'])
 	gulp.watch('source/*.html',['html'])
+    gulp.watch('source/components/*.html',['fileinclude'])
     gulp.watch('*.html',['fileinclude'])
     gulp.watch('source/less/*.less', ['css']);
 });

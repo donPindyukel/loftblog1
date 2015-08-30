@@ -1,0 +1,90 @@
+@import (reference) "loftblog1.less";
+.autorize-form-wraper{
+	//height: 100%;
+	width: 592px;
+	height: 490px;
+	//outline: 1px solid black;
+	background: #eff3f7;
+	border-radius: 3px;
+	margin: 25px auto;
+	.title-form{
+		height: 107px;
+		text-align: center;
+		padding-top: 27px;
+		.font-style(@font:'fira_sansbook';
+		            @f-size:40px; 
+		            @f-height: 45px; 
+		            @f-weight: normal; 
+		            @f-color: white;);
+		margin-bottom: 32px;
+	}
+	text-align: center;
+box-shadow: 0 1px 22px rgba(0,0,0,0.27);
+}
+
+.autorize{
+
+	p{
+		.font-style(@font:'fira_sanslight';
+		            @f-size: 36px; 
+		            @f-height: 45px; 
+		            @f-weight: normal; 
+		            @f-color: #959aa8;);
+		.zero();
+	}
+
+	input{
+		width: 423px;
+		height: 61px;
+		border: 1px solid #48cbe8;
+		border-radius: 3px;
+		&:hover{
+			outline:none;
+		}
+		&:focus{
+			outline:none;
+		}
+     &::placeholder{
+			.font-style(@font:'fira_sanslight'; 
+			        @f-size: 17px; 
+			        @f-height: 15px; 
+			        @f-weight: normal; 
+			        @f-color:#48cbe8;);
+			padding-top: 5px;
+			padding-left: 10px;
+		}
+	}
+
+	input[type="submit"]{
+		height: 55px;
+	width: 225px;
+	border-radius: 3px;
+	border-bottom: 2px solid #3ba8c0;
+	.font-style(@font:'fira_sansbook'; 
+			        @f-size: 36px; 
+			        @f-height: 0px; 
+			        @f-weight: normal; 
+			        @f-color:white;);
+	overflow: hidden;
+	background: #48cbe8;
+	outline: none;
+	border-left:none;
+	border-right: none;
+	border-top:none;
+	&:hover{
+			outline:none;
+			border-bottom: 2px solid #48cbe8;
+		}
+		&:active{
+			outline:none;
+			border-bottom: 2px solid #48cbe8;
+			border-top: 2px solid #3ba8c0;
+		}
+	}
+}
+.login-field{
+	margin-bottom: 28px;
+}
+.pass-field{
+	margin-bottom: 37px;
+}

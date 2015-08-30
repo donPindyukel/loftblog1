@@ -1,0 +1,287 @@
+@import (reference) "loftblog1.less";
+
+.portfolio-wraper{
+	background: #eff3f7;
+	height: 840px;
+	border-radius: 3px;
+
+}
+
+.portfolio-title{
+	margin-bottom: 25px;
+}
+
+.my_works{
+	list-style: none;
+	.zero();
+	//outline: 1px solid black;
+	//text-align: center;
+
+	li{
+		.zero();
+		height: 200px;
+		width: 200px;
+		//outline: 1px solid red;
+		//text-align: center;
+		display:inline-block;
+		margin-bottom: 32px;
+		margin-left: 10px;
+		text-align: center;
+		a{
+			display: block;
+			border:2px solid #3ba8c0;
+			border-radius: 3px;
+			height: 125px;
+			width: 180px;
+			overflow: hidden;
+			text-align: center;
+			margin: 0 auto;
+		//	margin-bottom: 5px;
+           	background: #016ca4;
+           	position: relative;
+       
+			img{
+				max-width: 105%;
+                max-height: 105%;
+                vertical-align: middle;
+               // opacity:0.5;
+               //display:none;
+			}
+
+		}
+	}
+	p{
+		.zero();
+		.font-style(@font:'fira_sanslight'; 
+			        @f-size: 15px; 
+			        @f-height: 20px; 
+			        @f-weight: normal; 
+			        @f-color:#4a545d;);
+		span{
+			.font-style(@font:'fira_sanslight_italic'; 
+			        @f-size: 13px; 
+			        @f-height: 30px; 
+			        @f-weight: normal; 
+			        @f-color:#3ba8c0;);
+			display: block;
+		}
+	}
+}
+
+.work-item-5{
+	display: inline-block;
+	vertical-align: top;
+	.add_project{
+		border: 1px dashed #3ba8c0;
+		border-radius: 3px;
+		height: 125px;
+		width: 180px;
+		padding-top: 25px;
+		cursor: pointer;
+		img{
+			margin-bottom: 10px;
+			position: relative;
+
+		}
+		p{
+			.font-style(@font:'fira_sanslight'; 
+			        @f-size: 13px; 
+			        @f-height: 20px; 
+			        @f-weight: normal; 
+			        @f-color:#3ba8c0;);
+		}
+
+	}
+
+}
+
+.name-hover{
+	.font-style(@font:'fira_sansbook'; 
+			        @f-size: 12px; 
+			        @f-height: 20px; 
+			        @f-weight: normal; 
+			        @f-color:white;);
+	border:2px solid white;
+	position: absolute;
+	border-radius: 8px;
+	top:50px;
+	left:100px;
+	width: 0;
+	height: 0;
+	//display: none;
+    overflow: hidden;
+    opacity: 0;
+    padding-top: 2px;
+ 
+}
+
+
+.hover-link{
+	background: #016ca4;
+	height: 125px;
+	width: 180px;
+	position: relative;
+}
+
+
+//модальный контент
+//форма
+.mod-form_add_project{
+	display:none;
+	height: 495px;
+	width: 363px;
+	z-index: 101;
+//	outline: 1px solid red;
+	position: absolute;
+	left:520px;
+	top:-500px;
+	background: white;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 4px 5px 33px rgba(0,0,0,0.78);
+	h4{
+		.font-style(@font:'fira_sansbook'; 
+			        @f-size: 17px; 
+			        @f-height: 0px; 
+			        @f-weight: normal; 
+			        @f-color:#959aa8;);
+		margin-top:20px;
+		margin-bottom:  15px;
+		margin-left: 20px;
+	}
+
+	input,.file_upload,
+	.form-descript_project{
+		height: 40px;
+		width: 320px;
+		margin-left: 20px;
+		.font-style(@font:'fira_sansbook'; 
+			        @f-size: 17px; 
+			        @f-height: 0px; 
+			        @f-weight: normal; 
+			        @f-color:black;);
+		border: 1px solid #48cbe8;
+		border-radius: 3px;
+		&:hover{
+			outline:none;
+		}
+		&:focus{
+			outline:none;
+		}
+     &::placeholder{
+			.font-style(@font:'fira_sanslight'; 
+			        @f-size: 13px; 
+			        @f-height: 15px; 
+			        @f-weight: normal; 
+			        @f-color:#48cbe8;);
+			padding-top: 5px;
+			padding-left: 10px;
+		}
+		
+	}
+
+	.form-descript_project{
+		height: 109px;
+		&::placeholder {
+			vertical-align: top;
+		}	
+	}
+
+}
+
+.title-form{
+	height: 52px;
+	background: #48cbe8;
+	border-bottom: 9px solid #67dffa;
+	margin-top: 0;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	.font-style(@font:'fira_sansregular'; 
+			        @f-size: 25px; 
+			        @f-height: 45px; 
+			        @f-weight: normal; 
+			        @f-color:white;);
+	position: relative;
+	.close-mod-form{
+     position: absolute;
+     background: url('../img/close.png') no-repeat;
+     cursor: pointer;
+     height: 30px;
+     width: 30px;
+     top: 8px;
+    left: 332px;
+	}
+}
+
+.name-field-2{
+	.file_upload{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    .font-style(@font:'fira_sansbook'; 
+			        @f-size: 17px; 
+			        @f-height: 0px; 
+			        @f-weight: normal; 
+			        @f-color:black;);
+    
+    .placehold{
+    	.font-style(@font:'fira_sanslight'; 
+			        @f-size: 13px; 
+			        @f-height: 15px; 
+			        @f-weight: normal; 
+			        @f-color:#48cbe8;);
+			padding-top: 0px;
+			padding-left: 10px;
+    }
+    input[type="file"]{
+    position: absolute;
+    top: 0;
+    opacity: 0;
+   }
+   .button{
+   	float:right;
+   	height: 40px;
+   	width: 50px;
+   	background: #48cbe8 url('../img/upload.png') center no-repeat;
+    cursor: pointer;
+
+   }
+ }  
+}
+
+.form-descript_project{
+  resize:none;
+}
+
+.name-field-5>.form-submit_project{
+	height: 35px;
+	width: 140px;
+	background: #48cbe8;
+	color:white;
+	margin-left: 110px;
+	border-bottom: 2px solid #3ba8c0;
+
+}
+.bold-clr{
+	.font-style(@font:'fira_sansbook'; 
+			        @f-size: 17px; 
+			        @f-height: 0px; 
+			        @f-weight: normal; 
+			        @f-color:black;);
+}
+
+.pop-up-show{
+	display:block;
+	
+}
+
+.black-wraper{
+	background: #818e9b;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 10;
+	opacity: 0.7;
+	display:none;
+}
+

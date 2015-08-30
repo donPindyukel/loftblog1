@@ -1,29 +1,137 @@
-@import (reference) "project_name.less";
+@import (reference) "loftblog1.less";
+
 /*текст в хеадере*/
-@font: 'Roboto Condensed'; 
-@f-size: 30px; 
-@f-height: 36px; 
-@f-weight: normal; 
-@f-color: yellow;
 
-
+@font: 'fira_sanslight';
+@f-size: 20px;
+@f-height: 36px;
+@f-weight: normal;
+@f-color: black;
 @name_ul: ul;
-
 //параметры кноаки
 @pad_top_btn: 5px;
-@radius_btn: 10px;//нижнее
-
-@up_clr_btn: #7e6bba;//верхнее значение градиента
-@dwn_clr_btn: #15054a;//нижнее
-@color_btn: #7e6bba;//статика
-@text_clr: #beb6d4;//цвет текста
-
+@radius_btn: 10px; //нижнее
+@up_clr_btn: #7e6bba; //верхнее значение градиента
+@dwn_clr_btn: #15054a; //нижнее
+@color_btn: #7e6bba; //статика
+@text_clr: #beb6d4; //цвет текста
 @width_btn: 250px;
-
 @mode: to bottom; // to bottom to top static
-
 //параметры сеток
 @content-width: 1200px;
 @max-column: 12;
-
 @column: 3;
+//sprite
+.stitches-sprite(@x: 0, @y: 0, @width: 0, @height: 0) {
+    background-position: @x @y;
+    width: @width;
+    height: @height;
+}
+
+.sprite {
+    background-image: url('../img/spritesheet.png');
+    background-repeat: no-repeat;
+    display: block;
+    &.sprite-bag {
+        .stitches-sprite(-5px,
+        -5px,
+        40px,
+        34px);
+    }
+    &.sprite-doc {
+        .stitches-sprite(-55px,
+        -5px,
+        30px,
+        32px);
+    }
+    &.sprite-fc {
+        .stitches-sprite(-95px,
+        -5px,
+        47px,
+        47px);
+    }
+    &.sprite-fc_active {
+        .stitches-sprite(-152px,
+        -5px,
+        47px,
+        47px);
+    }
+    &.sprite-git {
+        .stitches-sprite(-209px,
+        -5px,
+        47px,
+        47px);
+    }
+    &.sprite-git_active {
+        .stitches-sprite(-266px,
+        -5px,
+        47px,
+        47px);
+    }
+    &.sprite-hate {
+        .stitches-sprite(-323px,
+        -5px,
+        42px,
+        23px);
+    }
+    &.sprite-lock {
+        .stitches-sprite(-375px,
+        -5px,
+        20px,
+        32px);
+    }
+    &.sprite-mail {
+        .stitches-sprite(-405px,
+        -5px,
+        22px,
+        18px);
+    }
+    &.sprite-phone {
+        .stitches-sprite(-437px,
+        -5px,
+        21px,
+        20px);
+    }
+    &.sprite-photo {
+        .stitches-sprite(-468px,
+        -5px,
+        150px,
+        149px);
+    }
+    &.sprite-photo_female {
+        .stitches-sprite(-628px,
+        -5px,
+        150px,
+        149px);
+    }
+    &.sprite-skype {
+        .stitches-sprite(-788px,
+        -5px,
+        20px,
+        20px);
+    }
+    &.sprite-tw {
+        .stitches-sprite(-818px,
+        -5px,
+        47px,
+        47px);
+    }
+    &.sprite-tw_active {
+        .stitches-sprite(-875px,
+        -5px,
+        47px,
+        47px);
+    }
+    &.sprite-vk {
+        .stitches-sprite(-932px,
+        -5px,
+        47px,
+        47px);
+    }
+    &.sprite-vk_active {
+        .stitches-sprite(-989px,
+        -5px,
+        47px,
+        47px);
+    }
+}
