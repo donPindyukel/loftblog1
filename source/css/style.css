@@ -35,6 +35,7 @@
   height: 61px;
   border: 1px solid #48cbe8;
   border-radius: 3px;
+  padding-left: 30px;
 }
 
 .autorize input:hover {
@@ -1736,7 +1737,6 @@ h1 {
 
 .portfolio-wraper {
   background: #eff3f7;
-  height: 840px;
   border-radius: 3px;
 }
 
@@ -1748,6 +1748,7 @@ h1 {
   list-style: none;
   margin: 0;
   padding: 0;
+  vertical-align: top;
 }
 
 .my_works li {
@@ -1759,6 +1760,7 @@ h1 {
   margin-bottom: 32px;
   margin-left: 10px;
   text-align: center;
+  vertical-align: top;
 }
 
 .my_works li a {
@@ -1799,12 +1801,16 @@ h1 {
   display: block;
 }
 
-.work-item-5 {
+.my_works p i {
+  font-weight: bold;
+}
+
+.add-work-item {
   display: inline-block;
   vertical-align: top;
 }
 
-.work-item-5 .add_project {
+.add-work-item .add_project {
   border: 1px dashed #3ba8c0;
   border-radius: 3px;
   height: 125px;
@@ -1813,12 +1819,12 @@ h1 {
   cursor: pointer;
 }
 
-.work-item-5 .add_project img {
+.add-work-item .add_project img {
   margin-bottom: 10px;
   position: relative;
 }
 
-.work-item-5 .add_project p {
+.add-work-item .add_project p {
   font-family: 'fira_sanslight', sans-serif;
   font-size: 13px;
   line-height: 20px;
@@ -1836,12 +1842,11 @@ h1 {
   position: absolute;
   border-radius: 8px;
   top: 50px;
-  left: 100px;
-  width: 0;
-  height: 0;
+  left: 50px;
   overflow: hidden;
   opacity: 0;
   padding-top: 2px;
+  white-space: nowrap;
 }
 
 .mod-form_add_project {
@@ -1875,9 +1880,10 @@ h1 {
   height: 40px;
   width: 320px;
   margin-left: 20px;
+  padding-left: 10px;
   font-family: 'fira_sansbook', sans-serif;
   font-size: 17px;
-  line-height: 0px;
+  line-height: 10px;
   font-weight: normal;
   color: black;
   border: 1px solid #48cbe8;
@@ -2008,6 +2014,7 @@ h1 {
   color: #48cbe8;
   padding-top: 0px;
   padding-left: 10px;
+  width: 200px;
 }
 
 .name-field-2 .file_upload input[type="file"] {
@@ -2022,10 +2029,18 @@ h1 {
   width: 50px;
   background: #48cbe8 url("../img/upload.png") center no-repeat;
   cursor: pointer;
+  position: relative;
+  z-index: 10;
 }
 
-.form-descript_project {
+.name-field-4 > .form-descript_project {
   resize: none;
+  font-family: 'fira_sansbook', sans-serif;
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: normal;
+  color: black;
+  padding-top: 5px;
 }
 
 .name-field-5 > .form-submit_project {
@@ -2281,6 +2296,7 @@ h1 {
   height: 61px;
   border: 1px solid #48cbe8;
   border-radius: 3px;
+  padding-left: 30px;
 }
 
 .autorize input:hover {
@@ -2741,7 +2757,6 @@ article {
 
 .portfolio-wraper {
   background: #eff3f7;
-  height: 840px;
   border-radius: 3px;
 }
 
@@ -2753,6 +2768,7 @@ article {
   list-style: none;
   margin: 0;
   padding: 0;
+  vertical-align: top;
 }
 
 .my_works li {
@@ -2764,6 +2780,7 @@ article {
   margin-bottom: 32px;
   margin-left: 10px;
   text-align: center;
+  vertical-align: top;
 }
 
 .my_works li a {
@@ -2804,12 +2821,16 @@ article {
   display: block;
 }
 
-.work-item-5 {
+.my_works p i {
+  font-weight: bold;
+}
+
+.add-work-item {
   display: inline-block;
   vertical-align: top;
 }
 
-.work-item-5 .add_project {
+.add-work-item .add_project {
   border: 1px dashed #3ba8c0;
   border-radius: 3px;
   height: 125px;
@@ -2818,12 +2839,12 @@ article {
   cursor: pointer;
 }
 
-.work-item-5 .add_project img {
+.add-work-item .add_project img {
   margin-bottom: 10px;
   position: relative;
 }
 
-.work-item-5 .add_project p {
+.add-work-item .add_project p {
   font-family: 'fira_sanslight', sans-serif;
   font-size: 13px;
   line-height: 20px;
@@ -2841,12 +2862,11 @@ article {
   position: absolute;
   border-radius: 8px;
   top: 50px;
-  left: 100px;
-  width: 0;
-  height: 0;
+  left: 50px;
   overflow: hidden;
   opacity: 0;
   padding-top: 2px;
+  white-space: nowrap;
 }
 
 .mod-form_add_project {
@@ -2880,9 +2900,10 @@ article {
   height: 40px;
   width: 320px;
   margin-left: 20px;
+  padding-left: 10px;
   font-family: 'fira_sansbook', sans-serif;
   font-size: 17px;
-  line-height: 0px;
+  line-height: 10px;
   font-weight: normal;
   color: black;
   border: 1px solid #48cbe8;
@@ -3013,6 +3034,7 @@ article {
   color: #48cbe8;
   padding-top: 0px;
   padding-left: 10px;
+  width: 200px;
 }
 
 .name-field-2 .file_upload input[type="file"] {
@@ -3027,10 +3049,18 @@ article {
   width: 50px;
   background: #48cbe8 url("../img/upload.png") center no-repeat;
   cursor: pointer;
+  position: relative;
+  z-index: 10;
 }
 
-.form-descript_project {
+.name-field-4 > .form-descript_project {
   resize: none;
+  font-family: 'fira_sansbook', sans-serif;
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: normal;
+  color: black;
+  padding-top: 5px;
 }
 
 .name-field-5 > .form-submit_project {

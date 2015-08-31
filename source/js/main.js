@@ -1,5 +1,5 @@
 
-////////////модуль анимации на страници портфоолио - добавление сайта/////////////
+////////////модуль анимации на странице портфоолио - добавление сайта/////////////
 var animation_portfolio_add = (function() {
 
     var hover_element = $(".add_project");
@@ -54,25 +54,25 @@ var animation_portfolio_item = (function() {
 
         if (select.target.localName === 'a') {
 
-            $(select.target.firstElementChild).stop(true, true).animate({
+            $(select.target.firstElementChild).stop(true,true).animate({
                 'opacity': 0.5
             }, 500);
             $(select.target.lastElementChild).stop(true, true).animate({
                 'opacity': 1,
-                'width': 100,
+                'width': 155,
                 'height': 25,
-                'left': 40
+                'left': 10
             }, 500);
         } else {
 
-            $(select.target).stop(true, true).animate({
+            $(select.target).stop(true,true).animate({
                 'opacity': 0.5
             }, 500);
             $(select.target.nextElementSibling).stop(true, true).animate({
                 'opacity': 1,
-                'width': 100,
+                'width': 155,
                 'height': 25,
-                'left': 40
+                'left': 10
             }, 500);
         }
 
@@ -84,7 +84,7 @@ var animation_portfolio_item = (function() {
         if (select.target.localName === 'a') {
 
 
-            $(select.target.firstElementChild).stop(true, true).animate({
+            $(select.target.firstElementChild).stop(true,true).animate({
                 'opacity': 1
             }, 500);
             $(select.target.lastElementChild).stop(true, true).animate({
@@ -95,7 +95,7 @@ var animation_portfolio_item = (function() {
             }, 500);
         } else {
 
-            $(select.target).stop(true, true).animate({
+            $(select.target).stop(true,true).animate({
                 'opacity': 1
             }, 500);
             $(select.target.nextElementSibling).stop(true, true).animate({
@@ -146,6 +146,7 @@ function _upl_field(){
  $(p).html(text);
  $(p).addClass('bold-clr');
  $(p).removeClass('placehold');
+ $('.bold-clr').css('width','200px');
 };
 
 function _upload(){

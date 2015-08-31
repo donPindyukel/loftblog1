@@ -2,7 +2,7 @@
 
 .portfolio-wraper{
 	background: #eff3f7;
-	height: 840px;
+//	height: 840px;
 	border-radius: 3px;
 
 }
@@ -16,6 +16,7 @@
 	.zero();
 	//outline: 1px solid black;
 	//text-align: center;
+	vertical-align: top;
 
 	li{
 		.zero();
@@ -27,6 +28,7 @@
 		margin-bottom: 32px;
 		margin-left: 10px;
 		text-align: center;
+		vertical-align: top;
 		a{
 			display: block;
 			border:2px solid #3ba8c0;
@@ -65,10 +67,13 @@
 			        @f-color:#3ba8c0;);
 			display: block;
 		}
+		i{
+			 font-weight:bold;
+		}
 	}
 }
 
-.work-item-5{
+.add-work-item{
 	display: inline-block;
 	vertical-align: top;
 	.add_project{
@@ -105,13 +110,14 @@
 	position: absolute;
 	border-radius: 8px;
 	top:50px;
-	left:100px;
-	width: 0;
-	height: 0;
+	left:50px;
+	//width: 0;
+	//height: 0;
 	//display: none;
     overflow: hidden;
     opacity: 0;
     padding-top: 2px;
+    white-space: nowrap;
  
 }
 
@@ -155,9 +161,10 @@
 		height: 40px;
 		width: 320px;
 		margin-left: 20px;
+		padding-left:10px;
 		.font-style(@font:'fira_sansbook'; 
 			        @f-size: 17px; 
-			        @f-height: 0px; 
+			        @f-height: 10px; 
 			        @f-weight: normal; 
 			        @f-color:black;);
 		border: 1px solid #48cbe8;
@@ -232,6 +239,7 @@
 			        @f-color:#48cbe8;);
 			padding-top: 0px;
 			padding-left: 10px;
+			width: 200px;
     }
     input[type="file"]{
     position: absolute;
@@ -244,13 +252,21 @@
    	width: 50px;
    	background: #48cbe8 url('../img/upload.png') center no-repeat;
     cursor: pointer;
+    position: relative;
+    z-index: 10;
 
    }
  }  
 }
 
-.form-descript_project{
+.name-field-4>.form-descript_project{
   resize:none;
+  .font-style(@font:'fira_sansbook'; 
+			        @f-size: 17px; 
+			        @f-height: 20px; 
+			        @f-weight: normal; 
+			        @f-color:black;);
+  padding-top:5px;
 }
 
 .name-field-5>.form-submit_project{
@@ -265,9 +281,10 @@
 .bold-clr{
 	.font-style(@font:'fira_sansbook'; 
 			        @f-size: 17px; 
-			        @f-height: 0px; 
+			        @f-height: 20px; 
 			        @f-weight: normal; 
 			        @f-color:black;);
+	width: 200px;
 }
 
 .pop-up-show{
