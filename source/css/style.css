@@ -52,7 +52,7 @@
   line-height: 15px;
   font-weight: normal;
   color: #48cbe8;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-left: 10px;
 }
 
@@ -62,7 +62,7 @@
   line-height: 15px;
   font-weight: normal;
   color: #48cbe8;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-left: 10px;
 }
 
@@ -72,7 +72,7 @@
   line-height: 15px;
   font-weight: normal;
   color: #48cbe8;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-left: 10px;
 }
 
@@ -82,7 +82,7 @@
   line-height: 15px;
   font-weight: normal;
   color: #48cbe8;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-left: 10px;
 }
 
@@ -91,6 +91,9 @@
   width: 225px;
   border-radius: 3px;
   border-bottom: 2px solid #3ba8c0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
   font-family: 'fira_sansbook', sans-serif;
   font-size: 36px;
   line-height: 0px;
@@ -123,6 +126,105 @@
   margin-bottom: 37px;
 }
 
+.divider {
+  margin: 50px;
+}
+
+.tooltip {
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+          transition: opacity .3s;
+}
+
+.tooltip__inner {
+  max-width: 300px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #f97e76;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-family: 'fira_sansbook', sans-serif;
+  font-size: 15px;
+  line-height: 36px 20px;
+  font-weight: normal;
+  color: white;
+}
+
+.tooltip__inner:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent;
+}
+
+.tooltip_left {
+  padding: 0 5px;
+}
+
+.tooltip_left .tooltip__inner:after {
+  top: 50%;
+  margin-top: -10px;
+}
+
+.tooltip_left .tooltip__inner:after {
+  right: -5px;
+  border-left-color: #f97e76;
+  border-right-width: 0px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+.popup__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.popup__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  padding: 50px;
+  border-radius: 10px;
+  background-clip: padding-box;
+  background: #ffffff;
+}
+
+.popup__close {
+  display: block;
+  background: url("../img/close-btn.png") 0 0 no-repeat;
+  width: 36px;
+  height: 35px;
+  position: absolute;
+  top: -18px;
+  right: -18px;
+}
+
+.error {
+  color: firebrick;
+  font-weight: bold;
+}
 .contact-form-wrap {
   background: #eff3f7;
   height: 840px;
@@ -319,7 +421,6 @@
 .form-position-wrap .input-fields .mail-field-wrap {
   margin-left: 10px;
 }
-
 @font-face {
   font-family: 'fira_sanstwo';
   src: url("../fonts/firasans-two.eot");
@@ -743,6 +844,8 @@ h1 {
 }
 
 .experience .exp-list,
+.education .exp-list,
+.experience .educational-institutions,
 .education .educational-institutions {
   margin: 0;
   padding: 0;
@@ -750,6 +853,8 @@ h1 {
 }
 
 .experience .exp-list li p,
+.education .exp-list li p,
+.experience .educational-institutions li p,
 .education .educational-institutions li p {
   margin: 0;
   padding: 0;
@@ -763,6 +868,8 @@ h1 {
 }
 
 .experience .exp-list li p span,
+.education .exp-list li p span,
+.experience .educational-institutions li p span,
 .education .educational-institutions li p span {
   font-family: 'fira_sansbook', sans-serif;
   font-size: 17px;
@@ -799,6 +906,125 @@ h1 {
   position: absolute;
 }
 
+.exp-item-1:before.sprite-bag,
+.exp-item-2:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.exp-item-1:before.sprite-doc,
+.exp-item-2:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.exp-item-1:before.sprite-fc,
+.exp-item-2:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-fc_active,
+.exp-item-2:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-git,
+.exp-item-2:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-git_active,
+.exp-item-2:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-hate,
+.exp-item-2:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.exp-item-1:before.sprite-lock,
+.exp-item-2:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.exp-item-1:before.sprite-mail,
+.exp-item-2:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.exp-item-1:before.sprite-phone,
+.exp-item-2:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.exp-item-1:before.sprite-photo,
+.exp-item-2:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.exp-item-1:before.sprite-photo_female,
+.exp-item-2:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.exp-item-1:before.sprite-skype,
+.exp-item-2:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.exp-item-1:before.sprite-tw,
+.exp-item-2:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-tw_active,
+.exp-item-2:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-vk,
+.exp-item-2:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-vk_active,
+.exp-item-2:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
 .exp-item-1:before {
   top: 80px;
   left: 45px;
@@ -820,6 +1046,108 @@ h1 {
   position: absolute;
 }
 
+.edu-item-1:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.edu-item-1:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.edu-item-1:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.edu-item-1:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.edu-item-1:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.edu-item-1:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.edu-item-1:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.edu-item-1:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.edu-item-1:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.edu-item-1:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
 .edu-item-2:before {
   content: '';
   background-image: url("../img/spritesheet.png");
@@ -831,6 +1159,108 @@ h1 {
   position: absolute;
 }
 
+.edu-item-2:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.edu-item-2:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.edu-item-2:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.edu-item-2:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.edu-item-2:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.edu-item-2:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.edu-item-2:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.edu-item-2:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.edu-item-2:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.edu-item-2:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
 .edu-item-1:before {
   top: 80px;
   left: 45px;
@@ -840,8 +1270,115 @@ h1 {
   top: 135px;
   left: 45px;
 }
-
 /*текст в хеадере*/
+
+.sprite {
+  background-image: url("../img/spritesheet.png");
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.sprite.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.sprite.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.sprite.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.sprite.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.sprite.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.sprite.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.sprite.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.sprite.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.sprite.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.sprite.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.sprite.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.sprite.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.sprite.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.sprite.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.sprite.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.sprite.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.sprite.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
 
 @font-face {
   font-family: 'fira_sanstwo';
@@ -1213,6 +1750,108 @@ header {
   height: 47px;
 }
 
+.vk.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.vk.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.vk.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.vk.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.vk.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.vk.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.vk.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.vk.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.vk.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.vk.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
 .vk:hover {
   background-position: -989px -5px;
   width: 47px;
@@ -1225,6 +1864,108 @@ header {
   background-repeat: no-repeat;
   display: block;
   background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.tw.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.tw.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.tw.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.tw.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.tw.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.tw.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.tw.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.tw.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.tw.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-vk_active {
+  background-position: -989px -5px;
   width: 47px;
   height: 47px;
 }
@@ -1245,6 +1986,108 @@ header {
   height: 47px;
 }
 
+.fc.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.fc.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.fc.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.fc.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.fc.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.fc.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.fc.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.fc.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.fc.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.fc.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
 .fc:hover {
   background-position: -152px -5px;
   width: 47px;
@@ -1257,6 +2100,108 @@ header {
   background-repeat: no-repeat;
   display: block;
   background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.git.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.git.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.git.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.git.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.git.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.git.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.git.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.git.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.git.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-vk_active {
+  background-position: -989px -5px;
   width: 47px;
   height: 47px;
 }
@@ -1436,6 +2381,108 @@ aside {
   left: 15px;
 }
 
+.contacts-item-2:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.contacts-item-2:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.contacts-item-2:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.contacts-item-2:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.contacts-item-2:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.contacts-item-2:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.contacts-item-2:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-2:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-2:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.contacts-item-2:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
 .contacts-item-3 {
   background: #48cbe8;
   position: relative;
@@ -1454,6 +2501,108 @@ aside {
   left: 15px;
 }
 
+.contacts-item-3:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.contacts-item-3:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.contacts-item-3:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.contacts-item-3:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.contacts-item-3:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.contacts-item-3:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.contacts-item-3:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-3:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-3:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.contacts-item-3:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
 .contacts-item-4 {
   background: #51daf8;
   position: relative;
@@ -1470,6 +2619,108 @@ aside {
   position: absolute;
   top: 10px;
   left: 15px;
+}
+
+.contacts-item-4:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.contacts-item-4:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.contacts-item-4:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.contacts-item-4:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.contacts-item-4:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.contacts-item-4:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.contacts-item-4:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-4:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-4:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.contacts-item-4:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
 }
 
 footer {
@@ -1503,6 +2754,108 @@ footer p {
   height: 32px;
   top: 27px;
   left: 27px;
+}
+
+.lock.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.lock.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.lock.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.lock.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.lock.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.lock.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.lock.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.lock.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.lock.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.lock.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
 }
 
 .lock:hover {
@@ -1637,6 +2990,8 @@ h1 {
 }
 
 .experience .exp-list,
+.education .exp-list,
+.experience .educational-institutions,
 .education .educational-institutions {
   margin: 0;
   padding: 0;
@@ -1644,6 +2999,8 @@ h1 {
 }
 
 .experience .exp-list li p,
+.education .exp-list li p,
+.experience .educational-institutions li p,
 .education .educational-institutions li p {
   margin: 0;
   padding: 0;
@@ -1657,6 +3014,8 @@ h1 {
 }
 
 .experience .exp-list li p span,
+.education .exp-list li p span,
+.experience .educational-institutions li p span,
 .education .educational-institutions li p span {
   font-family: 'fira_sansbook', sans-serif;
   font-size: 17px;
@@ -1693,6 +3052,125 @@ h1 {
   position: absolute;
 }
 
+.exp-item-1:before.sprite-bag,
+.exp-item-2:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.exp-item-1:before.sprite-doc,
+.exp-item-2:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.exp-item-1:before.sprite-fc,
+.exp-item-2:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-fc_active,
+.exp-item-2:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-git,
+.exp-item-2:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-git_active,
+.exp-item-2:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-hate,
+.exp-item-2:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.exp-item-1:before.sprite-lock,
+.exp-item-2:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.exp-item-1:before.sprite-mail,
+.exp-item-2:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.exp-item-1:before.sprite-phone,
+.exp-item-2:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.exp-item-1:before.sprite-photo,
+.exp-item-2:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.exp-item-1:before.sprite-photo_female,
+.exp-item-2:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.exp-item-1:before.sprite-skype,
+.exp-item-2:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.exp-item-1:before.sprite-tw,
+.exp-item-2:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-tw_active,
+.exp-item-2:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-vk,
+.exp-item-2:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-vk_active,
+.exp-item-2:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
 .exp-item-1:before {
   top: 80px;
   left: 45px;
@@ -1714,6 +3192,108 @@ h1 {
   position: absolute;
 }
 
+.edu-item-1:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.edu-item-1:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.edu-item-1:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.edu-item-1:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.edu-item-1:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.edu-item-1:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.edu-item-1:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.edu-item-1:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.edu-item-1:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.edu-item-1:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
 .edu-item-2:before {
   content: '';
   background-image: url("../img/spritesheet.png");
@@ -1723,6 +3303,108 @@ h1 {
   width: 30px;
   height: 32px;
   position: absolute;
+}
+
+.edu-item-2:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.edu-item-2:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.edu-item-2:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.edu-item-2:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.edu-item-2:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.edu-item-2:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.edu-item-2:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.edu-item-2:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.edu-item-2:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.edu-item-2:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
 }
 
 .edu-item-1:before {
@@ -1847,6 +3529,13 @@ h1 {
   opacity: 0;
   padding-top: 2px;
   white-space: nowrap;
+}
+
+.hover-link {
+  background: #016ca4;
+  height: 125px;
+  width: 180px;
+  position: relative;
 }
 
 .mod-form_add_project {
@@ -1999,6 +3688,7 @@ h1 {
   display: block;
   position: relative;
   overflow: hidden;
+  padding-top: 0px;
   font-family: 'fira_sansbook', sans-serif;
   font-size: 17px;
   line-height: 0px;
@@ -2052,6 +3742,19 @@ h1 {
   border-bottom: 2px solid #3ba8c0;
 }
 
+.bold-clr {
+  font-family: 'fira_sansbook', sans-serif;
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: normal;
+  color: black;
+  width: 200px;
+}
+
+.pop-up-show {
+  display: block;
+}
+
 .black-wraper {
   background: #818e9b;
   height: 100%;
@@ -2060,6 +3763,88 @@ h1 {
   z-index: 10;
   opacity: 0.7;
   display: none;
+}
+
+.error-add-prj,
+.success-add-prj {
+  width: 320px;
+  height: 62px;
+  background: #fdd5d2;
+  border: 1px solid #f97e76;
+  border-radius: 3px;
+  position: relative;
+  margin: 15px auto;
+  display: none;
+}
+
+.error-add-prj .close-error-pict,
+.success-add-prj .close-error-pict,
+.error-add-prj .close-success-pict,
+.success-add-prj .close-success-pict {
+  height: 20px;
+  width: 20px;
+  background: url("../img/close-error.png") center no-repeat;
+  position: absolute;
+  top: 0;
+  left: 295px;
+  cursor: pointer;
+}
+
+.error-add-prj .msg-error,
+.success-add-prj .msg-error,
+.error-add-prj .msg-success,
+.success-add-prj .msg-success {
+  font-family: 'fira_sansbook', sans-serif;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: normal;
+  color: #f97e76;
+  margin-left: 10px;
+}
+
+.error-add-prj .msg-error span,
+.success-add-prj .msg-error span,
+.error-add-prj .msg-success span,
+.success-add-prj .msg-success span {
+  font-family: 'fira_sansbook', sans-serif;
+  font-size: 25px;
+  line-height: 15px;
+  font-weight: normal;
+  color: #f97e76;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.success-add-prj {
+  display: block;
+  background: #b8e1ce;
+  border-color: #49bb7b;
+  margin: 15px auto;
+}
+
+.success-add-prj .close-success-pict {
+  background: url("../img/close-success.png") center no-repeat;
+}
+
+.success-add-prj .msg-success {
+  color: #49bb7b;
+}
+
+.success-add-prj .msg-success span {
+  color: #49bb7b;
+}
+
+.success-wrap {
+  width: 350px;
+  height: 92px;
+  border-radius: 3px;
+  background: #eff3f7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 1px 18px rgba(0, 0, 0, 0.42);
+  display: none;
+  z-index: 1600;
 }
 
 .contact-form-wrap {
@@ -2313,7 +4098,7 @@ h1 {
   line-height: 15px;
   font-weight: normal;
   color: #48cbe8;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-left: 10px;
 }
 
@@ -2323,7 +4108,7 @@ h1 {
   line-height: 15px;
   font-weight: normal;
   color: #48cbe8;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-left: 10px;
 }
 
@@ -2333,7 +4118,7 @@ h1 {
   line-height: 15px;
   font-weight: normal;
   color: #48cbe8;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-left: 10px;
 }
 
@@ -2343,7 +4128,7 @@ h1 {
   line-height: 15px;
   font-weight: normal;
   color: #48cbe8;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-left: 10px;
 }
 
@@ -2352,6 +4137,9 @@ h1 {
   width: 225px;
   border-radius: 3px;
   border-bottom: 2px solid #3ba8c0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
   font-family: 'fira_sansbook', sans-serif;
   font-size: 36px;
   line-height: 0px;
@@ -2384,6 +4172,105 @@ h1 {
   margin-bottom: 37px;
 }
 
+.divider {
+  margin: 50px;
+}
+
+.tooltip {
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+          transition: opacity .3s;
+}
+
+.tooltip__inner {
+  max-width: 300px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #f97e76;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-family: 'fira_sansbook', sans-serif;
+  font-size: 15px;
+  line-height: 36px 20px;
+  font-weight: normal;
+  color: white;
+}
+
+.tooltip__inner:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent;
+}
+
+.tooltip_left {
+  padding: 0 5px;
+}
+
+.tooltip_left .tooltip__inner:after {
+  top: 50%;
+  margin-top: -10px;
+}
+
+.tooltip_left .tooltip__inner:after {
+  right: -5px;
+  border-left-color: #f97e76;
+  border-right-width: 0px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+.popup__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.popup__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  padding: 50px;
+  border-radius: 10px;
+  background-clip: padding-box;
+  background: #ffffff;
+}
+
+.popup__close {
+  display: block;
+  background: url("../img/close-btn.png") 0 0 no-repeat;
+  width: 36px;
+  height: 35px;
+  position: absolute;
+  top: -18px;
+  right: -18px;
+}
+
+.error {
+  color: firebrick;
+  font-weight: bold;
+}
 html {
   box-sizing: border-box;
 }
@@ -2450,6 +4337,108 @@ header {
   height: 47px;
 }
 
+.vk.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.vk.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.vk.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.vk.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.vk.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.vk.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.vk.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.vk.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.vk.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.vk.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
 .vk:hover {
   background-position: -989px -5px;
   width: 47px;
@@ -2462,6 +4451,108 @@ header {
   background-repeat: no-repeat;
   display: block;
   background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.tw.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.tw.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.tw.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.tw.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.tw.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.tw.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.tw.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.tw.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.tw.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-vk_active {
+  background-position: -989px -5px;
   width: 47px;
   height: 47px;
 }
@@ -2482,6 +4573,108 @@ header {
   height: 47px;
 }
 
+.fc.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.fc.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.fc.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.fc.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.fc.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.fc.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.fc.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.fc.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.fc.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.fc.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
 .fc:hover {
   background-position: -152px -5px;
   width: 47px;
@@ -2494,6 +4687,108 @@ header {
   background-repeat: no-repeat;
   display: block;
   background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.git.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.git.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.git.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.git.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.git.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.git.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.git.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.git.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.git.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-vk_active {
+  background-position: -989px -5px;
   width: 47px;
   height: 47px;
 }
@@ -2673,6 +4968,108 @@ aside {
   left: 15px;
 }
 
+.contacts-item-2:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.contacts-item-2:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.contacts-item-2:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.contacts-item-2:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.contacts-item-2:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.contacts-item-2:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.contacts-item-2:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-2:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-2:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.contacts-item-2:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
 .contacts-item-3 {
   background: #48cbe8;
   position: relative;
@@ -2691,6 +5088,108 @@ aside {
   left: 15px;
 }
 
+.contacts-item-3:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.contacts-item-3:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.contacts-item-3:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.contacts-item-3:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.contacts-item-3:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.contacts-item-3:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.contacts-item-3:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-3:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-3:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.contacts-item-3:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
 .contacts-item-4 {
   background: #51daf8;
   position: relative;
@@ -2707,6 +5206,108 @@ aside {
   position: absolute;
   top: 10px;
   left: 15px;
+}
+
+.contacts-item-4:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.contacts-item-4:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.contacts-item-4:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.contacts-item-4:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.contacts-item-4:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.contacts-item-4:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.contacts-item-4:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-4:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-4:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.contacts-item-4:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
 }
 
 footer {
@@ -2740,6 +5341,108 @@ footer p {
   height: 32px;
   top: 27px;
   left: 27px;
+}
+
+.lock.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.lock.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.lock.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.lock.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.lock.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.lock.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.lock.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.lock.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.lock.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.lock.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
 }
 
 .lock:hover {
@@ -2867,6 +5570,13 @@ article {
   opacity: 0;
   padding-top: 2px;
   white-space: nowrap;
+}
+
+.hover-link {
+  background: #016ca4;
+  height: 125px;
+  width: 180px;
+  position: relative;
 }
 
 .mod-form_add_project {
@@ -3019,6 +5729,7 @@ article {
   display: block;
   position: relative;
   overflow: hidden;
+  padding-top: 0px;
   font-family: 'fira_sansbook', sans-serif;
   font-size: 17px;
   line-height: 0px;
@@ -3072,6 +5783,19 @@ article {
   border-bottom: 2px solid #3ba8c0;
 }
 
+.bold-clr {
+  font-family: 'fira_sansbook', sans-serif;
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: normal;
+  color: black;
+  width: 200px;
+}
+
+.pop-up-show {
+  display: block;
+}
+
 .black-wraper {
   background: #818e9b;
   height: 100%;
@@ -3082,4 +5806,1332 @@ article {
   display: none;
 }
 
+.error-add-prj,
+.success-add-prj {
+  width: 320px;
+  height: 62px;
+  background: #fdd5d2;
+  border: 1px solid #f97e76;
+  border-radius: 3px;
+  position: relative;
+  margin: 15px auto;
+  display: none;
+}
+
+.error-add-prj .close-error-pict,
+.success-add-prj .close-error-pict,
+.error-add-prj .close-success-pict,
+.success-add-prj .close-success-pict {
+  height: 20px;
+  width: 20px;
+  background: url("../img/close-error.png") center no-repeat;
+  position: absolute;
+  top: 0;
+  left: 295px;
+  cursor: pointer;
+}
+
+.error-add-prj .msg-error,
+.success-add-prj .msg-error,
+.error-add-prj .msg-success,
+.success-add-prj .msg-success {
+  font-family: 'fira_sansbook', sans-serif;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: normal;
+  color: #f97e76;
+  margin-left: 10px;
+}
+
+.error-add-prj .msg-error span,
+.success-add-prj .msg-error span,
+.error-add-prj .msg-success span,
+.success-add-prj .msg-success span {
+  font-family: 'fira_sansbook', sans-serif;
+  font-size: 25px;
+  line-height: 15px;
+  font-weight: normal;
+  color: #f97e76;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.success-add-prj {
+  display: block;
+  background: #b8e1ce;
+  border-color: #49bb7b;
+  margin: 15px auto;
+}
+
+.success-add-prj .close-success-pict {
+  background: url("../img/close-success.png") center no-repeat;
+}
+
+.success-add-prj .msg-success {
+  color: #49bb7b;
+}
+
+.success-add-prj .msg-success span {
+  color: #49bb7b;
+}
+
+.success-wrap {
+  width: 350px;
+  height: 92px;
+  border-radius: 3px;
+  background: #eff3f7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 1px 18px rgba(0, 0, 0, 0.42);
+  display: none;
+  z-index: 1600;
+}
+.vk.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.vk.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.vk.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.vk.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.vk.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.vk.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.vk.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.vk.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.vk.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.vk.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.vk.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.tw.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.tw.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.tw.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.tw.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.tw.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.tw.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.tw.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.tw.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.tw.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.tw.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.fc.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.fc.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.fc.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.fc.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.fc.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.fc.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.fc.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.fc.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.fc.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.fc.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.git.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.git.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.git.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.git.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.git.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.git.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.git.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.git.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.git.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.git.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.contacts-item-2:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.contacts-item-2:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.contacts-item-2:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.contacts-item-2:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.contacts-item-2:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.contacts-item-2:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-2:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-2:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.contacts-item-2:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-2:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.contacts-item-3:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.contacts-item-3:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.contacts-item-3:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.contacts-item-3:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.contacts-item-3:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.contacts-item-3:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-3:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-3:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.contacts-item-3:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-3:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.contacts-item-4:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.contacts-item-4:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.contacts-item-4:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.contacts-item-4:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.contacts-item-4:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.contacts-item-4:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-4:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.contacts-item-4:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.contacts-item-4:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.contacts-item-4:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.lock.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.lock.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.lock.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.lock.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.lock.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.lock.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.lock.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.lock.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.lock.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.lock.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-bag,
+.exp-item-2:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.exp-item-1:before.sprite-doc,
+.exp-item-2:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.exp-item-1:before.sprite-fc,
+.exp-item-2:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-fc_active,
+.exp-item-2:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-git,
+.exp-item-2:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-git_active,
+.exp-item-2:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-hate,
+.exp-item-2:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.exp-item-1:before.sprite-lock,
+.exp-item-2:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.exp-item-1:before.sprite-mail,
+.exp-item-2:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.exp-item-1:before.sprite-phone,
+.exp-item-2:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.exp-item-1:before.sprite-photo,
+.exp-item-2:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.exp-item-1:before.sprite-photo_female,
+.exp-item-2:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.exp-item-1:before.sprite-skype,
+.exp-item-2:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.exp-item-1:before.sprite-tw,
+.exp-item-2:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-tw_active,
+.exp-item-2:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-vk,
+.exp-item-2:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.exp-item-1:before.sprite-vk_active,
+.exp-item-2:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.edu-item-1:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.edu-item-1:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.edu-item-1:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.edu-item-1:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.edu-item-1:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.edu-item-1:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.edu-item-1:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.edu-item-1:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.edu-item-1:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-1:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.edu-item-2:before.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.edu-item-2:before.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.edu-item-2:before.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.edu-item-2:before.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.edu-item-2:before.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.edu-item-2:before.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.edu-item-2:before.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.edu-item-2:before.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.edu-item-2:before.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.edu-item-2:before.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}
+
 /*текст в хеадере*/
+
+.sprite {
+  background-image: url("../img/spritesheet.png");
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.sprite.sprite-bag {
+  background-position: -5px -5px;
+  width: 40px;
+  height: 34px;
+}
+
+.sprite.sprite-doc {
+  background-position: -55px -5px;
+  width: 30px;
+  height: 32px;
+}
+
+.sprite.sprite-fc {
+  background-position: -95px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.sprite.sprite-fc_active {
+  background-position: -152px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.sprite.sprite-git {
+  background-position: -209px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.sprite.sprite-git_active {
+  background-position: -266px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.sprite.sprite-hate {
+  background-position: -323px -5px;
+  width: 42px;
+  height: 23px;
+}
+
+.sprite.sprite-lock {
+  background-position: -375px -5px;
+  width: 20px;
+  height: 32px;
+}
+
+.sprite.sprite-mail {
+  background-position: -405px -5px;
+  width: 22px;
+  height: 18px;
+}
+
+.sprite.sprite-phone {
+  background-position: -437px -5px;
+  width: 21px;
+  height: 20px;
+}
+
+.sprite.sprite-photo {
+  background-position: -468px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.sprite.sprite-photo_female {
+  background-position: -628px -5px;
+  width: 150px;
+  height: 149px;
+}
+
+.sprite.sprite-skype {
+  background-position: -788px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.sprite.sprite-tw {
+  background-position: -818px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.sprite.sprite-tw_active {
+  background-position: -875px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.sprite.sprite-vk {
+  background-position: -932px -5px;
+  width: 47px;
+  height: 47px;
+}
+
+.sprite.sprite-vk_active {
+  background-position: -989px -5px;
+  width: 47px;
+  height: 47px;
+}

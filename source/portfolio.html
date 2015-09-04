@@ -147,39 +147,51 @@
 </footer>
 
         <div class="mod-form_add_project" id="mod-form_add">
-	<form action="#" class="add_project" enctype="multipart/form-data" method="post">
+	<form action="#" class="add_project" enctype="multipart/form-data" method="post" id="mod-form-add-prj">
 		<h3 class="title-form">
 			<div class="close-mod-form" id="close"></div>
 			Добавление проекта
 		</h3>
+		<div class="error-add-prj" id="error-add">
+			<p class="msg-error"><span>Ошибка!</span>Невозможно добавить проект.</p>
+			<div class="close-error-pict"></div>
+		</div>
 		<div class="name-field-1">
 			<h4 class="title-name_project">Название проекта</h4>
-			<input type="text" class="form-name_project" name="name" placeholder="Введите название"></div>
+			<input type="text" class="form-name_project" name="name" placeholder="Введите название" data-validation="label"></div>
 		<div class="name-field-2">
 			<h4 class="title-pict_project">Картинка проекта</h4>
-			<label class="file_upload" id="f_upl">
+			<label class="file_upload" id="f_upl" >
 				<div class="button"></div>
 				<p class="placehold">Загрузите изображение</p>
-				<input type="file" accept="image/*" class="form-pict_project" size="500"></label>
+				<input type="file" accept="image/*" class="form-pict_project" size="500" data-validation="pict" id="pic-add" name='picture'></label>
 		</div>
 		<div class="name-field-3">
 			<h4 class="title-url_project">URL проекта</h4>
-			<input type="text" class="form-url_project" name="url" placeholder="Добавьте ссылку"></div>
+			<input type="text" class="form-url_project" name="url" placeholder="Добавьте ссылку" data-validation="url_prj"></div>
 		<div class="name-field-4">
 			<h4 class="title-descript_project">Описание</h4>
-			<textarea class="form-descript_project" name="discription" placeholder="Пара слов о Вашем проекте"></textarea>
+			<textarea class="form-descript_project" name="discription" placeholder="Пара слов о Вашем проекте" data-validation="text"></textarea>
 		</div>
 		<div class="name-field-5">
 			<input type="submit" class="form-submit_project" value="Добавить"></div>
 
 	</form>
 </div>
+<div class="success-wrap" id="success-add">
+<div class="success-add-prj" >
+			<p class="msg-success"><span>Ура!</span>Проект успешно добавлен.</p>
+			<div class="close-success-pict"></div>
+		</div></div>
      
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
 
+        
+
         <script src="js/main.js"></script>
+
     </body>  
 
 </html>

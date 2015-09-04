@@ -51,7 +51,7 @@ box-shadow: 0 1px 22px rgba(0,0,0,0.27);
 			        @f-height: 15px; 
 			        @f-weight: normal; 
 			        @f-color:#48cbe8;);
-			padding-top: 5px;
+			padding-top: 7px;
 			padding-left: 10px;
 		}
 	}
@@ -61,6 +61,8 @@ box-shadow: 0 1px 22px rgba(0,0,0,0.27);
 	width: 225px;
 	border-radius: 3px;
 	border-bottom: 2px solid #3ba8c0;
+	.zero();
+	text-align: center;
 	.font-style(@font:'fira_sansbook'; 
 			        @f-size: 36px; 
 			        @f-height: 0px; 
@@ -89,3 +91,109 @@ box-shadow: 0 1px 22px rgba(0,0,0,0.27);
 .pass-field{
 	margin-bottom: 37px;
 }
+
+// тултипы
+
+.divider {
+  margin: 50px; }
+
+.tooltip {
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+  transition: opacity .3s;
+
+}
+
+.tooltip__inner {
+  max-width: 300px;
+  padding-left: 10px;
+  padding-right:10px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #f97e76;
+  border-radius: 4px;
+  white-space: nowrap; 
+  .font-style(@font: 'fira_sansbook';
+              @f-size: 15px;
+              @f-height 20px; 
+              @f-weight: normal; 
+              @f-color: white;);
+  
+}
+ 
+  .tooltip__inner:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+   // border-color: transparent;
+    border-style: solid;
+    border-width: 10px; 
+   // border-color: #f97e76;
+   border-color: transparent;
+}
+
+ .tooltip_left {
+  padding: 0 5px; 
+
+}
+
+.tooltip_left .tooltip__inner:after {
+    top: 50%;
+    margin-top: -10px;
+    }
+
+.tooltip_left .tooltip__inner:after {
+  right: -5px;
+  border-left-color: #f97e76;
+  border-right-width: 0px; 
+}
+
+//popup
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none; 
+
+}
+
+.popup__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); 
+
+}
+
+.popup__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 50px;
+  border-radius: 10px;
+  background-clip: padding-box;
+  background: #ffffff; 
+}
+
+.popup__close {
+  display: block;
+  background: url("../img/close-btn.png") 0 0 no-repeat;
+  width: 36px;
+  height: 35px;
+  position: absolute;
+  top: -18px;
+  right: -18px; 
+}
+
+.error {
+  color: firebrick;
+  font-weight: bold;
+   }

@@ -11,6 +11,7 @@ var gulp = require('gulp'),
      clean = require('gulp-clean'),
      uncss = require('gulp-uncss'),
      fileinclude = require('gulp-file-include'),
+     concat = require('gulp-concat'),
     minifyCSS = require('gulp-minify-css');
    
 //server connect
@@ -54,6 +55,13 @@ gulp.task('fileinclude', function() {
     .pipe(connect.reload());
 });
 
+//concat for concat js
+
+gulp.task('concat-js', function() {
+  return gulp.src('source/js/scripts/*.js')
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('source/js/'));
+});
 
 //css
 gulp.task('css', ['clear'], function () {//перед css выполниться clear
@@ -62,9 +70,9 @@ gulp.task('css', ['clear'], function () {//перед css выполниться
         .pipe(less())
         .pipe(gulp.dest('source/tmp/'))//директория для лесовых цсс
         .pipe(concatCSS('style.css'))//файл в который сливаем лес цссы
-        .pipe(uncss({
-           html: ['source/*.html']//удаляем в нем неиспользуемые стили
-        }))
+        // .pipe(uncss({
+           // html: ['source/*.html']//удаляем в нем неиспользуемые стили
+        // }))
         .pipe(autoprefixer('last 2 versions', '> 1%', 'ie 9','Firefox ESR', 'Opera 12.1')) //костыли   
         .pipe(gulp.dest('source/css/'))//сохраняем вес в эту директорию
         .pipe(connect.reload());//ерезагрузим сервак
@@ -84,7 +92,8 @@ gulp.task('watch', function() {
 	gulp.watch('source/*.html',['html'])
     gulp.watch('source/components/*.html',['fileinclude'])
     gulp.watch('*.html',['fileinclude'])
-    gulp.watch('source/less/*.less', ['css']);
+    gulp.watch('source/less/*.less', ['css'])
+    gulp.watch('source/js/scripts/*.js',['concat-js']);
 });
 
 gulp.task('default', ['connect', 'html', 'css', 'watch']);
