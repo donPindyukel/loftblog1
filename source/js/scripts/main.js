@@ -28,13 +28,13 @@ if ($('.popup').length) {
     Popups.init();
   }
 
-if ($('#error-add').length) {
+/*if ($('#error-add').length) {
   popPortfolioAdd.init();
-}
+}*/
 
-if ($('#success-add').length) {
+
   popPortfolioAdd.init();
-}
+
 
 $('#form_auth').on('submit', function(e){
   e.preventDefault();  
@@ -65,7 +65,8 @@ $('#mod-form-add-prj').on ('submit', function(e){
    
     var 
         $this = $(this);
-        postFormData($this,function(data) {
+        
+        postFormDatafiles($this,function(data) {
 
          var 
              answerUpl = data.status ? 'ok' : 'not';

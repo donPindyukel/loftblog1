@@ -28,13 +28,13 @@ if ($('.popup').length) {
     Popups.init();
   }
 
-if ($('#error-add').length) {
+/*if ($('#error-add').length) {
   popPortfolioAdd.init();
-}
+}*/
 
-if ($('#success-add').length) {
+
   popPortfolioAdd.init();
-}
+
 
 $('#form_auth').on('submit', function(e){
   e.preventDefault();  
@@ -65,7 +65,8 @@ $('#mod-form-add-prj').on ('submit', function(e){
    
     var 
         $this = $(this);
-        postFormData($this,function(data) {
+        
+        postFormDatafiles($this,function(data) {
 
          var 
              answerUpl = data.status ? 'ok' : 'not';
@@ -298,15 +299,18 @@ var popPortfolioAdd = (function(){
         successMsg = $('#success-add');
         bgrd = $('#back');
 
-    function _close(){
+    function _closeErr(){
         
         if (errorMsg.length){
             
             errorMsg.hide();
             $('#mod-form_add').css('height','495');    
-        
+            bgrd.show();
+            //console.log('yaaaaahooo');
         }
+    }
 
+    function _closeSucc(){ 
         if (successMsg.length){
 
             successMsg.hide();
@@ -341,14 +345,14 @@ var popPortfolioAdd = (function(){
                 e.preventDefault();
 
 
-                _close();
+                _closeErr();
             });
 
             $('.close-success-pict, #back').on('click', function(e){
                 e.preventDefault();
              
 
-                _close();
+                _closeSucc();
             });
         }
     }
@@ -392,11 +396,41 @@ var Popups = (function() {
 //////////////////////////////////////////////////////////////
 //TOOLTIPS
 //////////////////////////////////////////////////////////////
+//////////////отправка ajax с file upload///////////////////////////////////
+function postFormDatafiles (form, successCallback){
+
+    var 
+        host         = form.attr('action'),
+        dataObject   = new FormData(form[0]);
+
+        if (!host) {
+        console.log('set action attribute to your form, you fool!!');
+    }
+
+        // Отправляем запрос
+ 
+    var defObj = $.ajax({
+        url: host,
+        type: 'POST',
+        data: dataObject,
+        cache: false,
+        dataType: 'json',
+        processData: false, // Не обрабатываем файлы (Don't process the files)
+        contentType: false, // Так jQuery скажет серверу что это строковой запрос
+        success: successCallback,
+    });
+
+    //return defObj;
+}
+
+/////////////отправка ajax простая//////////////////////////////////
 function postFormData(form, successCallback) {
     var
         host        = form.attr('action'),
         reqFields   = form.find('[name]'),
         dataObject  = {};
+
+    //var data = 
 
     if (!host) {
         console.log('set action attribute to your form, you fool!!');
@@ -412,7 +446,7 @@ function postFormData(form, successCallback) {
 
     });
 
-   // console.log(dataObject['picture']);
+  
 
     $.post(host, dataObject, successCallback);
 }
