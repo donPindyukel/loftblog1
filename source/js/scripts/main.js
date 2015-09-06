@@ -32,7 +32,7 @@ if ($('.popup').length) {
   popPortfolioAdd.init();
 }*/
 
-
+popMsgSend.init();
   popPortfolioAdd.init();
 
 
@@ -76,6 +76,26 @@ $('#mod-form-add-prj').on ('submit', function(e){
         });
 
   }
+});
+
+$('#contact-form').on('submit', function(e){
+  e.preventDefault();
+
+  var 
+      $this = $(this);
+
+  if (validateThis($this)){
+     postFormDatafiles($this, function(data){
+ 
+        answerUpl = data.status ? 'ok' : 'not';
+      //      console.log(answerUpl);
+              popMsgSend.open(answerUpl);
+          });
+  //console.log('puk');
+
+
+  }
+  else{console.log('validate');}
 });
 
 });

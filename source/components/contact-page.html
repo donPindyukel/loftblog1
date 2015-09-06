@@ -1,5 +1,5 @@
 <div class="contact-form-wrap">
-	<form action="" class="contacts-form">
+	<form action="adfr.php" class="contacts-form" id="contact-form">
 		<h3 class="title-form">
 			У вас интересный проект? Напишите мне
 			</h3>
@@ -7,16 +7,16 @@
 			<div class="input-fields">
 		<div class="name-field-wrap">
 		    <h4 class="name-field-title">Имя</h4>
-			<input type="text" class="name-field" name="name" placeholder="Как к Вам обращаться">
+			<input type="text" class="name-field" name="name" placeholder="Как к Вам обращаться" data-validation="name">
 		</div>
 		<div class="mail-field-wrap">
 		 <h4 class="mail-field-title">Email</h4>
-			<input type="text" class="mail-field" name="mail" placeholder="Куда мне писать">
+			<input type="text" class="mail-field" name="mail" placeholder="Куда мне писать" data-validation='mail'>
 		</div>
 		</div>
 		<div class="msg-field-wrap">
 		 <h4 class="msg-field-title">Сообщение</h4>
-			<textarea class="msg-field" name="msg" placeholder="Кратко в чем суть" ></textarea>
+			<textarea class="msg-field" name="msg" placeholder="Кратко в чем суть" data-validation="text"></textarea>
 		</div>
 		<div class="captcha-field-wrap">
 		 <h4 class="captcha-field-title">Введите код, указанный на картинке</h4>

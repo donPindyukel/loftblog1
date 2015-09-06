@@ -165,19 +165,25 @@
   border-color: transparent;
 }
 
-.tooltip_left {
+.tooltip_left,
+.tooltip_right {
   padding: 0 5px;
 }
 
 .tooltip_left .tooltip__inner:after {
   top: 50%;
   margin-top: -10px;
-}
-
-.tooltip_left .tooltip__inner:after {
   right: -5px;
   border-left-color: #f97e76;
   border-right-width: 0px;
+}
+
+.tooltip_right .tooltip__inner:after {
+  top: 50%;
+  margin-top: -10px;
+  left: -5px;
+  border-right-color: #f97e76;
+  border-left-width: 0px;
 }
 
 .popup {
@@ -227,7 +233,6 @@
 }
 .contact-form-wrap {
   background: #eff3f7;
-  height: 840px;
   border-radius: 3px;
 }
 
@@ -259,6 +264,7 @@
 .contacts-form .msg-field {
   width: 193px;
   height: 40px;
+  padding-left: 10px;
   font-family: 'fira_sansbook', sans-serif;
   font-size: 17px;
   line-height: 30px;
@@ -285,7 +291,7 @@
   line-height: 15px;
   font-weight: normal;
   color: #48cbe8;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-left: 10px;
 }
 
@@ -296,7 +302,7 @@
   line-height: 15px;
   font-weight: normal;
   color: #48cbe8;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-left: 10px;
 }
 
@@ -307,7 +313,7 @@
   line-height: 15px;
   font-weight: normal;
   color: #48cbe8;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-left: 10px;
 }
 
@@ -318,7 +324,7 @@
   line-height: 15px;
   font-weight: normal;
   color: #48cbe8;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-left: 10px;
 }
 
@@ -359,6 +365,7 @@
   width: 135px;
   border-radius: 3px;
   border-bottom: 2px solid #3ba8c0;
+  padding-top: 3px;
   font-family: 'fira_sansbook', sans-serif;
   font-size: 19px;
   line-height: 0px;
@@ -420,6 +427,58 @@
 
 .form-position-wrap .input-fields .mail-field-wrap {
   margin-left: 10px;
+}
+
+.error-wrap {
+  width: 350px;
+  height: 92px;
+  border-radius: 3px;
+  background: #eff3f7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 1px 18px rgba(0, 0, 0, 0.42);
+  display: none;
+  z-index: 1600;
+}
+
+.error-text {
+  width: 320px;
+  height: 62px;
+  background: #fdd5d2;
+  border: 1px solid #f97e76;
+  border-radius: 3px;
+  position: relative;
+  margin: 15px auto;
+}
+
+.error-text .close-error {
+  height: 20px;
+  width: 20px;
+  background: url("../img/close-error.png") center no-repeat;
+  position: absolute;
+  top: 0;
+  left: 295px;
+  cursor: pointer;
+}
+
+.error-text .msg-error {
+  font-family: 'fira_sansbook', sans-serif;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: normal;
+  color: #f97e76;
+  margin-left: 10px;
+}
+
+.error-text .msg-error span {
+  font-family: 'fira_sansbook', sans-serif;
+  font-size: 25px;
+  line-height: 15px;
+  font-weight: normal;
+  color: #f97e76;
+  display: block;
+  margin-bottom: 12px;
 }
 @font-face {
   font-family: 'fira_sanstwo';
@@ -1718,7 +1777,12 @@ body {
 }
 
 .footer {
-  margin-top: -105px;
+  margin-top: -6%;
+  margin-bottom: 0;
+}
+
+.content-page {
+  margin-bottom: 130px;
 }
 
 .content-wraper {
@@ -2728,6 +2792,7 @@ footer {
   min-width: 960px;
   background: #eff3f7 url("../img/h-border.png") top center no-repeat;
   text-align: center;
+  margin-bottom: 0;
 }
 
 footer p {
@@ -3849,7 +3914,6 @@ h1 {
 
 .contact-form-wrap {
   background: #eff3f7;
-  height: 840px;
   border-radius: 3px;
 }
 
@@ -3881,6 +3945,7 @@ h1 {
 .contacts-form .msg-field {
   width: 193px;
   height: 40px;
+  padding-left: 10px;
   font-family: 'fira_sansbook', sans-serif;
   font-size: 17px;
   line-height: 30px;
@@ -3907,7 +3972,7 @@ h1 {
   line-height: 15px;
   font-weight: normal;
   color: #48cbe8;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-left: 10px;
 }
 
@@ -3918,7 +3983,7 @@ h1 {
   line-height: 15px;
   font-weight: normal;
   color: #48cbe8;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-left: 10px;
 }
 
@@ -3929,7 +3994,7 @@ h1 {
   line-height: 15px;
   font-weight: normal;
   color: #48cbe8;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-left: 10px;
 }
 
@@ -3940,7 +4005,7 @@ h1 {
   line-height: 15px;
   font-weight: normal;
   color: #48cbe8;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-left: 10px;
 }
 
@@ -3981,6 +4046,7 @@ h1 {
   width: 135px;
   border-radius: 3px;
   border-bottom: 2px solid #3ba8c0;
+  padding-top: 3px;
   font-family: 'fira_sansbook', sans-serif;
   font-size: 19px;
   line-height: 0px;
@@ -4042,6 +4108,58 @@ h1 {
 
 .form-position-wrap .input-fields .mail-field-wrap {
   margin-left: 10px;
+}
+
+.error-wrap {
+  width: 350px;
+  height: 92px;
+  border-radius: 3px;
+  background: #eff3f7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 1px 18px rgba(0, 0, 0, 0.42);
+  display: none;
+  z-index: 1600;
+}
+
+.error-text {
+  width: 320px;
+  height: 62px;
+  background: #fdd5d2;
+  border: 1px solid #f97e76;
+  border-radius: 3px;
+  position: relative;
+  margin: 15px auto;
+}
+
+.error-text .close-error {
+  height: 20px;
+  width: 20px;
+  background: url("../img/close-error.png") center no-repeat;
+  position: absolute;
+  top: 0;
+  left: 295px;
+  cursor: pointer;
+}
+
+.error-text .msg-error {
+  font-family: 'fira_sansbook', sans-serif;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: normal;
+  color: #f97e76;
+  margin-left: 10px;
+}
+
+.error-text .msg-error span {
+  font-family: 'fira_sansbook', sans-serif;
+  font-size: 25px;
+  line-height: 15px;
+  font-weight: normal;
+  color: #f97e76;
+  display: block;
+  margin-bottom: 12px;
 }
 
 .autorize-form-wraper {
@@ -4211,19 +4329,25 @@ h1 {
   border-color: transparent;
 }
 
-.tooltip_left {
+.tooltip_left,
+.tooltip_right {
   padding: 0 5px;
 }
 
 .tooltip_left .tooltip__inner:after {
   top: 50%;
   margin-top: -10px;
-}
-
-.tooltip_left .tooltip__inner:after {
   right: -5px;
   border-left-color: #f97e76;
   border-right-width: 0px;
+}
+
+.tooltip_right .tooltip__inner:after {
+  top: 50%;
+  margin-top: -10px;
+  left: -5px;
+  border-right-color: #f97e76;
+  border-left-width: 0px;
 }
 
 .popup {
@@ -4305,7 +4429,12 @@ body {
 }
 
 .footer {
-  margin-top: -105px;
+  margin-top: -6%;
+  margin-bottom: 0;
+}
+
+.content-page {
+  margin-bottom: 130px;
 }
 
 .content-wraper {
@@ -5315,6 +5444,7 @@ footer {
   min-width: 960px;
   background: #eff3f7 url("../img/h-border.png") top center no-repeat;
   text-align: center;
+  margin-bottom: 0;
 }
 
 footer p {

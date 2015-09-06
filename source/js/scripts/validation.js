@@ -1,3 +1,74 @@
+//модуль обработчика серверного ответа формы контактов
+var popMsgSend = (function(){
+    
+    var 
+        errorMsg = $('#error-msg');
+       
+        successMsg = $('#success-add');
+        bgrd = $('#back');
+
+    function _closeErr(){
+        
+        if (errorMsg.length){
+            
+            errorMsg.hide();
+            bgrd.stop(true,true).fadeOut(100);
+            //console.log('yaaaaahooo');
+        }
+    }
+
+    function _closeSucc(){ 
+        if (successMsg.length){
+
+            successMsg.hide();
+            bgrd.stop(true,true).fadeOut(100);
+        }
+        
+
+    }
+
+    return {
+        
+        open : function(id){
+            
+
+           if (id === 'not') {
+
+               
+                errorMsg.show();
+               // errorInnerMsg.show();
+                 bgrd.stop(true,true).fadeIn(500);
+           }
+
+           if (id === 'ok') {
+                successMsg.show();
+                 bgrd.stop(true,true).fadeIn(500);
+
+           }
+        },
+
+        init: function(){
+        
+            $('.close-error, #back').on('click', function(e){
+                e.preventDefault();
+
+
+                _closeErr();
+            });
+
+            $('.close-success-pict, #back').on('click', function(e){
+                e.preventDefault();
+             
+
+                _closeSucc();
+            });
+        }
+    }
+}());
+
+
+
+
 //Обработчик серверного ответа при добавлении в портфорлио
 
 var popPortfolioAdd = (function(){
@@ -179,8 +250,8 @@ function validateThis(form) {
         isValidlabel = false,
         isValidpict = false,
         isValidurl = false,
-        isValidtext = false;
-        
+        isValidtext = false,
+        isValidmail = false;
 
 
    nameType.each(function(){
@@ -198,6 +269,23 @@ function validateThis(form) {
             });
 
             isValidname = false;
+        }
+    });
+
+    mailType.each(function(){
+        var
+            $this = $(this),
+            regExp = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/,
+            isMail = regExp.test($this.val());
+
+        if (isMail) {
+            isValidmail = true;
+        } else {
+            $this.tooltip({
+                content : 'Неверный e-mail',
+                position : 'right'
+            });
+            isValidmail = false;
         }
     });
 
@@ -297,27 +385,14 @@ function validateThis(form) {
         }
     });
 
-    mailType.each(function(){
-        var
-            $this = $(this),
-            regExp = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/,
-            isMail = regExp.test($this.val());
-
-        if (isMail) {
-            isValid = true;
-        } else {
-            $this.tooltip({
-                content : 'Неверный e-mail',
-                position : 'bottom'
-            });
-            isValid = false;
-        }
-    });
+   
 
     return ((isValidname && isValidpass) || ( isValidlabel &&
                                              isValidpict &&
                                             isValidurl &&
-                                            isValidtext ));
+                                            isValidtext ) || (isValidname &&
+                                                              isValidmail &&
+                                                              isValidtext ));
 }
 
 
@@ -374,8 +449,8 @@ $.fn.tooltip = function(options) {
 
         $('.tooltipstered').each(function(index){
             var
-                position = $(this).data('tooltip-position');
-
+                position = $(this).attr('data-tooltip-position');
+           //  console.log(tooltipsArray[2]);
             _positionIt($(this), tooltipsArray[index], position);
         });
 
@@ -408,7 +483,7 @@ function _positionIt(elem, tooltip, position) {
         switch (position) {
             case 'right' :
                 positions = {
-                    left : rightEdge,
+                    left : rightEdge+4,
                     top : topEdge + topCentered
                 };
                 break;

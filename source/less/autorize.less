@@ -135,20 +135,29 @@ box-shadow: 0 1px 22px rgba(0,0,0,0.27);
    border-color: transparent;
 }
 
- .tooltip_left {
+ .tooltip_left, .tooltip_right {
   padding: 0 5px; 
 
 }
 
-.tooltip_left .tooltip__inner:after {
-    top: 50%;
-    margin-top: -10px;
-    }
+
+
+
 
 .tooltip_left .tooltip__inner:after {
+  top: 50%;
+  margin-top: -10px;
   right: -5px;
   border-left-color: #f97e76;
   border-right-width: 0px; 
+}
+
+.tooltip_right .tooltip__inner:after {
+  top: 50%;
+  margin-top: -10px;
+  left: -5px;
+  border-right-color: #f97e76;
+  border-left-width: 0px; 
 }
 
 //popup
