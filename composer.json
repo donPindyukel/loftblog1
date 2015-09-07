@@ -1,0 +1,15 @@
+{
+    "name": "plugins/vendor",
+    "authors": [
+        {
+            "name": "Andrey Pindyuk",
+            "email": "a913000@gmail.com"
+        }
+    ],
+    "require": {
+    	"j4mie/idiorm": "v1.5.1",
+        "smottt/wideimage": "dev-master",
+        "phpmailer/phpmailer":"v5.2.11"
+
+    }
+}
