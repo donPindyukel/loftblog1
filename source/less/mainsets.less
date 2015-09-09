@@ -39,15 +39,12 @@ body {
 }
 
 .footer {
-	//width: 1000px;
-	//margin: 0 auto;
-	//min-height: 100%;
-	//height: auto !important;
-	//height: 100%;
-	//margin-top: -10%;
-	//position: relative;
-	//bottom: 105px;
+
+	min-width:960px;
 	margin-top: -80px;
+	@media screen and (max-width: 770px){
+ 	min-width: 770px;
+ }
 }
 
 
@@ -57,6 +54,10 @@ body {
 	min-width: 960px;
    //outline:1px solid red;
 	margin:0 auto;
+	@media screen and (max-width: 770px){
+ 	min-width: 770px;
+ 	//outline:1px solid red;
+ }
 
 }
 
@@ -66,15 +67,20 @@ header{
     background:  #eff3f7 url('../img/h-border.png') bottom center no-repeat;	
     height: 120px;
     position: relative;
+ @media screen and (max-width: 770px){
+ 	min-width: 770px;
 
+ }
 }
+
 
 
 //социальные кнопки
 .social-buttons{
 	list-style: none;
 	.zero();
-
+	//outline: 1px solid red;
+    
 
 }
 
@@ -174,7 +180,10 @@ header{
 
 .vertical-center-right{
 	float:right;
-
+@media screen and (max-width: 770px){
+   float:left;
+   margin-left: 20%;
+}
 
 }
 
@@ -184,6 +193,49 @@ header{
 }
 
 
+.mobile-menu{
+	display: none;
+	width: 30px;
+	height: 30px;
+	background: url('../img/for_mob-but.png') center no-repeat;
+	cursor: pointer;
+	margin-top:41px;
+	 @media screen and (max-width: 770px){
+ 	display:block;
+    float:right;
+    margin-right: 2%;
+
+ }
+}
+
+.mobile-menu-navigator{
+	position: absolute;
+	z-index: 1600;
+	left:520px;
+	top: 90px;
+		.main-menu{
+	
+		box-shadow: 0 1px 11px rgba(0,0,0,0.38);
+	}
+	&:after{
+	 content: "";
+     display: block;
+     position: absolute;
+     width: 0;
+     height: 0;
+     border-style: solid;
+     border-width: 15px; 
+    // border-color: #f97e76;
+   border-color: transparent;
+   border-bottom-color: #3ba8c0;
+	position: absolute;
+	z-index: 100;
+	bottom:242px;
+	left:200px;
+	}
+	display: none;
+}
+
 
 //sidebar
 
@@ -192,6 +244,11 @@ section{
 //	outline:1px solid black;
 	margin:40px auto;
 	.clearfix();
+		@media screen and (max-width: 770px){
+        min-width: 770px;
+
+     
+}
 }
 
 
@@ -199,12 +256,17 @@ aside{
 	width: 250px;
 //	outline: 1px solid red;
 	float:left;
+	@media screen and (max-width: 770px){
+       display: none;
+}
 }
 
 
 .sidebar{
 //	outline: 1px solid green;
 	width: 250px;
+	display: block;
+
 }
 
 .main-menu{
@@ -216,6 +278,10 @@ aside{
 	li{
 		text-align: center;
 		 background: #eff3f7;
+		    @media screen and (max-width: 770px){
+		 	background: white;
+		 	width: 240px;
+		 }
 			
 		a{
           
@@ -223,6 +289,9 @@ aside{
            height: 73px;
            border-top:2px solid #3ba8c0;
            background: #eff3f7;
+           @media screen and (max-width: 770px){
+		 	background: white;
+		 }
            margin:auto 10px;
            padding-top:17px;
            .font-style( 'fira_sansbook', 21px, auto, normal, #959aa8);
@@ -265,22 +334,31 @@ aside{
 	list-style: none;
 	width: 250px;
 	.zero();
+
+	       @media screen and (max-width: 770px){
+	width: 100%;
+	font-size: 0px;
+	text-align: center;
+}
 	
 	li{
 		.zero();
 
 		height: 40px;
        // padding-left: 60px;
+       @media screen and (max-width: 770px){
+	display:inline-block;
+}
 		p{
 			text-align: left;
 			.zero();
-			.font-style( 'fira_sansbook', 21px, auto, normal, white);
+			.font-style( 'fira_sansbook', 21px, 22px, normal, white);
 			padding-left: 20px;
-			padding-top: 3px;
+			padding-top: 10px;
 		}
   
 		a{
-           .font-style( 'fira_sansbook', 17px, auto, normal, white);
+           .font-style( 'fira_sansbook', 17px, 40px, normal, white);
            text-decoration: none;
            margin-left: 55px;
            &:hover{
@@ -290,6 +368,23 @@ aside{
 
 		}
 	}
+}
+
+@media screen and (max-width: 770px){
+	.contacts-item-2,
+	.contacts-item-3,
+	.contacts-item-4{ 
+
+	width: 255px;
+	font-size: 0px;
+	text-align: center;
+
+	&:before{
+		left:20%;
+
+
+	}
+}
 }
 
 .contacts-item-1{
@@ -308,7 +403,13 @@ aside{
 	position: absolute;
 	top: 10px;
 	left:15px;
+	@media screen and (max-width: 770px){
+
+		left:15%;
 	}
+	}
+
+
 }
 .contacts-item-3{
 	background: #48cbe8;
@@ -323,6 +424,10 @@ aside{
 	position: absolute;
 	top: 10px;
 	left:15px;
+	@media screen and (max-width: 770px){
+
+		left:15%;
+	}
 	}
 }
 .contacts-item-4{
@@ -338,6 +443,10 @@ aside{
 	position: absolute;
 	top: 10px;
 	left:15px;
+	@media screen and (max-width: 770px){
+
+		left:15%;
+	}
 	}
 }
 
@@ -352,9 +461,15 @@ footer{
 // position: relative;
  //margin-top: -80px;
  margin-bottom: 0;
+ 	@media screen and (max-width: 770px){
+ 	min-width: 770px;
+ }
  p{
  	.zero();
  	padding-top: 27px;
+ 	 	@media screen and (max-width: 770px){
+ 	.font-style( 'fira_sanslight', 13px, auto, normal, #4a545d);
+       }
  }
 }
 
@@ -364,6 +479,9 @@ footer{
 	min-width: 960px;
    //outline:1px solid red;
 	margin:0 auto;
+	@media screen and (max-width: 770px){
+ 	min-width: 770px;
+ }
 	
 }
 
@@ -403,7 +521,8 @@ footer{
 	display: block;
 	position: absolute;
 	top:27px;
-	left:1030px;
+	left:80%;
+	padding-left: 40px;
 	text-decoration: none;
 	.font-style(@font: 'fira_sansbook', @f-size: 20px, @f-height: 40px, @f-weight: normal, @f-color: #4a545d);
 }
@@ -413,4 +532,20 @@ article{
 	
 	float:right;
 	width: 650px;
+		@media screen and (max-width: 770px){
+       //display: block;
+       float:center;
+       margin-right: 8%;
+     //  margin: 0 auto;
+         //outline: 1px solid red;
+         margin-bottom: 30px;
+
+}
+}
+
+.contacts-line {
+	display:none;
+	@media screen and (max-width: 770px) {
+		display: block;
+	}
 }

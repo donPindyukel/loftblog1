@@ -1,4 +1,4 @@
-@import (reference) "loftblog1.less";
+@import (reference)"loftblog1.less";
 .autorize-form-wraper{
 	//height: 100%;
 
@@ -10,7 +10,10 @@
 	position: relative;
 	top:20px;
 	left:30%;
-
+	@media screen and (max-width: 770px){
+ 	top:40px;
+ 	left:12%;
+}
 
 	.title-form{
 		height: 107px;
@@ -44,6 +47,7 @@ box-shadow: 0 1px 22px rgba(0,0,0,0.27);
 		border: 1px solid #48cbe8;
 		border-radius: 3px;
 		padding-left:30px;
+		color: #48cbe8;
 		&:hover{
 			outline:none;
 		}

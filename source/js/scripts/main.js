@@ -98,5 +98,10 @@ $('#contact-form').on('submit', function(e){
   else{console.log('validate');}
 });
 
+
+if($("#mobile-menu-button").length) { 
+  mobileMenu.init();
+ }
+
 });
 

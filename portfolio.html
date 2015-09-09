@@ -18,7 +18,10 @@
     <body>
 
     <div class="black-wraper" id="back"></div>
-        <header>@@include('source/components/header.html')</header>
+        <header>@@include('source/components/header.html')
+        @@include('source/components/mobile-menu-navigation.html',{"about_me":"none",
+                  "portfolio":"current",
+                  "contacts":"none"})</header>
      
         <section>
             <aside>@@include('source/components/navigation.html',{
@@ -28,6 +31,14 @@
             <article>
                @@include('source/components/portfolio-page.html') 
             </article>
+
+            <div class="contacts-line">
+  <ul class="sidebar-contacts">
+  <li class="contacts-item-2"><a href="mailto:a913000@gmail.com" class="email">a913000@gmail.com</a></li>
+  <li class="contacts-item-3"><a href="tel:+79163196899" class="phone">+7 916 391 3000</a></li>
+  <li class="contacts-item-4"><a href="skype:pin913" class="skype">pin913</a></li>
+</ul> 
+</div>
 
         </section>
 
