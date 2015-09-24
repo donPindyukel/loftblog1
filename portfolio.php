@@ -41,12 +41,14 @@ try{
     </head>
    
     <body>
-
+ <div class="content-page">
     <div class="black-wraper" id="back"></div>
-        <header><div class="content-wraper clearfix">
+        <header>
+        <div class="content-wraper clearfix">
 	<div class="vertical-center-left">
 	<a class="logo" href="index.html">
-		<img src="img/logo.png" alt="Loftblog">
+		<img src="img/logo.png" alt="Loftblog" class="desctop-logo tablet-logo">
+                <img src="img/mobile-logo.png" alt="Loftblog" class="mobile-logo">
 		<span class="logo-text">Сайт портфолио</span>
 	</a>
 	</div>
@@ -68,7 +70,15 @@ try{
 	</div>
 	
 
-</div></header>
+</div>
+            <div class="mobile-menu-navigator" id="mobile-menu">
+       <ul class="main-menu">
+  <li class="menu-item-1 none"><a href="index.html" class="about-me">Обо мне</a></li>
+  <li class="menu-item-2  current"><a href="portfolio.html" class="portfolio">Мои работы</a></li>
+  <li class="menu-item-3 none"><a href="form-contacts.html" class="form-contacts ">Связаться со мной</a></li>
+</ul>
+     </div>
+        </header>
      
         <section>
             <aside><div class="sidebar">
@@ -119,13 +129,44 @@ try{
 
  
             </article>
+            
+            <div class="contacts-line">
+  <ul class="sidebar-contacts">
+  <li class="contacts-item-2"><a href="mailto:a913000@gmail.com" class="email">a913000@gmail.com</a></li>
+  <li class="contacts-item-3"><a href="tel:+79163196899" class="phone">+7 916 391 3000</a></li>
+  <li class="contacts-item-4"><a href="skype:pin913" class="skype">pin913</a></li>
+</ul> 
+</div>
+
+<div class="mob-soc-but">
+  <ul class="social-buttons">
+    <li class="social-item-1">
+      <a href="vk.com" class="vk">Vk</a>
+    </li>
+    <li class="social-item-2">
+      <a href="twitter.com" class="tw">Twitter</a>
+    </li>
+    <li class="social-item-3">
+      <a href="facebook.com" class="fc">Facebook</a>
+    </li>
+    <li class="social-item-4">
+      <a href="git.com" class="git">git</a>
+    </li>
+  </ul>
+</div>
 
         </section>
-
-        <footer><div class="footer-wraper"><a href="autorize.php" class="lock"></a>
-<p class="copyright">(c)2015. Это мой сайт, пожалуйста, не копируйте и не воруйте его</p></div>
-
+</div>
+        <div class="footer">  
+       <footer><div class="footer-wraper"><a href="autorize.php" class="lock" ></a>
+<p class="copyright">(c)2015. Данный сайт разработан собственными руками и головой</p> <?php if ( $_SESSION['auth'] == true) : ?>
+<a href="php/logout.php" class="logout">Выйти</a></div>
+<?php endif ?>
+            <a href="index.html" class="on_main">На главную</a>
+        </div>
+           
 </footer>
+                  </div> 
 
         <div class="mod-form_add_project" id="mod-form_add">
 	<form action="php/add_project.php" class="add_project" enctype="multipart/form-data" method="POST" id="mod-form-add-prj">

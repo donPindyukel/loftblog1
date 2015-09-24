@@ -68,11 +68,12 @@ $auth = null;
         </div>
         
 </div>
-
+<div class="footer"> 
         <footer><div class="footer-wraper"><a href="autorize.php" class="lock off_image"></a>
 <p class="copyright">(c)2015. Это мой сайт, пожалуйста, не копируйте и не воруйте его</p></div>
 
 </footer>
+    </div>
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>

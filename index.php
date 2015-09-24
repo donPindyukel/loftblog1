@@ -1,3 +1,12 @@
+<?php
+session_start(session_name('php_for_beginners'));
+
+require_once "vendor/autoload.php";
+$i=1;
+?>
+
+
+
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -139,10 +148,39 @@
 	</ul>
 </div> 
             </article>
+       <div class="contacts-line">
+ <ul class="sidebar-contacts"> 
+  <li class="contacts-item-2"><a href="mailto:a913000@gmail.com" class="email">a913000@gmail.com</a></li>
+  <li class="contacts-item-3"><a href="tel:+79163196899" class="phone">+7 916 391 3000</a></li>
+  <li class="contacts-item-4"><a href="skype:pin913" class="skype">pin913</a></li>
+</ul> 
+</div>
+
+<div class="mob-soc-but">
+  <ul class="social-buttons">
+    <li class="social-item-1">
+      <a href="vk.com" class="vk">Vk</a>
+    </li>
+    <li class="social-item-2">
+      <a href="twitter.com" class="tw">Twitter</a>
+    </li>
+    <li class="social-item-3">
+      <a href="facebook.com" class="fc">Facebook</a>
+    </li>
+    <li class="social-item-4">
+      <a href="git.com" class="git">git</a>
+    </li>
+  </ul>
+</div>
 
         </section>
+        </div>
         <footer><div class="footer-wraper"><a href="autorize.php" class="lock" ></a>
-<p class="copyright">(c)2015. Это мой сайт, пожалуйста, не копируйте и не воруйте его</p> <a href="php/logout.php"> выйти</a></div>
+<p class="copyright">(c)2015. Данный сайт разработан собственными руками и головой</p> <?php if ( $_SESSION['auth'] == true) : ?>
+<a href="php/logout.php" class="logout">Выйти</a></div>
+<?php endif ?>
+            <a href="index.html" class="on_main">На главную</a>
+        </div>
            
 </footer>
 
